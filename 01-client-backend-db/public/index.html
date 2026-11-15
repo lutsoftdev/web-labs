@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>SoftShop — Lab 01</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 520px; margin: 2rem auto; padding: 0 1rem; }
+    button { padding: 0.6rem 1.2rem; font-size: 1rem; cursor: pointer; }
+    li { margin: 0.4rem 0; }
+  </style>
+</head>
+<body>
+  <h1>SoftShop</h1>
+  <p>Онлайн-магазин: товари з бази через API</p>
+  <button id="load">Load items</button>
+  <ul id="list"></ul>
+
+  <script>
+    document.getElementById("load").addEventListener("click", async () => {
+      const res = await fetch("/items");
+      const items = await res.json();
+      const list = document.getElementById("list");
+      list.innerHTML = "";
+      items.forEach((item) => {
+        const li = document.createElement("li");
+        li.textContent = `#${item.id} — ${item.name}`;
+        list.appendChild(li);
+      });
+    });
+  </script>
+</body>
+</html>

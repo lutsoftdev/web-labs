@@ -1,0 +1,12 @@
+node_modules
+dist
+build
+coverage
+.env
+.env.local
+.git
+.DS_Store
+.vscode
+.idea
+*.md
+NOTES.md

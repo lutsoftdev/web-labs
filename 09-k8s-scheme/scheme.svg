@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560">
+  <rect width="900" height="560" fill="#f8fafc"/>
+  <text x="20" y="28" font-family="Segoe UI, Arial" font-size="18" font-weight="bold">SoftShop API — Kubernetes (теоретична схема)</text>
+
+  <rect x="20" y="50" width="100" height="40" rx="6" fill="#dbeafe" stroke="#1d4ed8"/>
+  <text x="40" y="75" font-family="Segoe UI, Arial" font-size="13">User/Client</text>
+
+  <rect x="150" y="50" width="70" height="40" rx="6" fill="#e2e8f0" stroke="#475569"/>
+  <text x="168" y="75" font-family="Segoe UI, Arial" font-size="13">DNS</text>
+
+  <rect x="250" y="50" width="120" height="40" rx="6" fill="#e2e8f0" stroke="#475569"/>
+  <text x="265" y="75" font-family="Segoe UI, Arial" font-size="12">Load Balancer</text>
+
+  <rect x="400" y="40" width="480" height="300" rx="10" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="420" y="65" font-family="Segoe UI, Arial" font-size="14" font-weight="bold">Kubernetes cluster</text>
+
+  <rect x="420" y="80" width="200" height="40" rx="6" fill="#fef3c7" stroke="#b45309"/>
+  <text x="445" y="105" font-family="Segoe UI, Arial" font-size="12">Ingress (api.softshop.local)</text>
+
+  <rect x="420" y="140" width="440" height="180" rx="8" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="435" y="165" font-family="Segoe UI, Arial" font-size="13">Namespace: softshop</text>
+
+  <rect x="440" y="180" width="180" height="50" rx="6" fill="#dcfce7" stroke="#15803d"/>
+  <text x="460" y="200" font-family="Segoe UI, Arial" font-size="12">Service: softshop-api</text>
+  <text x="470" y="218" font-family="Segoe UI, Arial" font-size="11">ClusterIP :80</text>
+
+  <rect x="440" y="250" width="200" height="50" rx="6" fill="#dbeafe" stroke="#1d4ed8"/>
+  <text x="455" y="270" font-family="Segoe UI, Arial" font-size="12">Deployment: softshop-api</text>
+  <text x="470" y="288" font-family="Segoe UI, Arial" font-size="11">replicas: 2</text>
+
+  <rect x="660" y="180" width="90" height="50" rx="6" fill="#fae8ff" stroke="#a21caf"/>
+  <text x="680" y="210" font-family="Segoe UI, Arial" font-size="12">Pod 1</text>
+  <rect x="760" y="180" width="90" height="50" rx="6" fill="#fae8ff" stroke="#a21caf"/>
+  <text x="780" y="210" font-family="Segoe UI, Arial" font-size="12">Pod 2</text>
+  <text x="670" y="250" font-family="Segoe UI, Arial" font-size="11">image: softshop-api:1.0.0</text>
+
+  <rect x="20" y="380" width="200" height="50" rx="6" fill="#f1f5f9" stroke="#334155"/>
+  <text x="35" y="410" font-family="Segoe UI, Arial" font-size="12">git: lutsoftdev/web-labs</text>
+
+  <rect x="250" y="380" width="200" height="50" rx="6" fill="#f1f5f9" stroke="#334155"/>
+  <text x="275" y="410" font-family="Segoe UI, Arial" font-size="12">CI/CD: GitHub Actions</text>
+
+  <rect x="500" y="380" width="220" height="50" rx="6" fill="#f1f5f9" stroke="#334155"/>
+  <text x="515" y="410" font-family="Segoe UI, Arial" font-size="12">Registry: softshop-api:1.0.0</text>
+
+  <text x="20" y="480" font-family="Segoe UI, Arial" font-size="12">Потік запиту: Client → DNS → LB → Ingress → Service → Pods</text>
+  <text x="20" y="505" font-family="Segoe UI, Arial" font-size="12">Потік коду: git push → CI збирає image → registry → Pod тягне image</text>
+  <text x="20" y="535" font-family="Segoe UI, Arial" font-size="12" fill="#555">2 Pod-и — базова відмовостійкість (якщо один впав, другий обслуговує).</text>
+</svg>

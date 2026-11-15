@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: softshop-api
+  namespace: softshop
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: softshop-api
+  template:
+    metadata:
+      labels:
+        app: softshop-api
+    spec:
+      containers:
+        - name: softshop-api
+          image: softshop-k8s-demo:1.0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
+          env:
+            - name: APP_MESSAGE
+              valueFrom:
+                configMapKeyRef:
+                  name: softshop-config
+                  key: APP_MESSAGE
+            - name: PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: softshop-config
+                  key: PORT
+            - name: API_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: softshop-secret
+                  key: API_TOKEN
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: 3000
+            initialDelaySeconds: 3
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 10

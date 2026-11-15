@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: softshop-config
+  namespace: softshop
+data:
+  APP_MESSAGE: "Hello from ConfigMap SoftShop"
+  PORT: "3000"

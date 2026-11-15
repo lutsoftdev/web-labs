@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="320" viewBox="0 0 720 320">
+  <rect width="720" height="320" fill="#f7f7f7"/>
+  <text x="24" y="36" font-family="Segoe UI, Arial" font-size="18" font-weight="bold">SoftShop — архітектура</text>
+  <rect x="40" y="80" width="140" height="70" rx="8" fill="#dbeafe" stroke="#1d4ed8"/>
+  <text x="55" y="120" font-family="Segoe UI, Arial" font-size="14">Client (браузер)</text>
+  <rect x="260" y="80" width="180" height="70" rx="8" fill="#dcfce7" stroke="#15803d"/>
+  <text x="285" y="112" font-family="Segoe UI, Arial" font-size="14">Backend (Express)</text>
+  <text x="305" y="132" font-family="Segoe UI, Arial" font-size="12">API SoftShop</text>
+  <rect x="520" y="80" width="160" height="70" rx="8" fill="#fef3c7" stroke="#b45309"/>
+  <text x="545" y="120" font-family="Segoe UI, Arial" font-size="14">Database (SQLite)</text>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333"/>
+    </marker>
+  </defs>
+  <line x1="180" y1="115" x2="255" y2="115" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="440" y1="115" x2="515" y2="115" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="80" y="210" width="120" height="50" rx="6" fill="#ede9fe" stroke="#6d28d9" stroke-dasharray="4 3"/>
+  <text x="100" y="240" font-family="Segoe UI, Arial" font-size="13">Auth (майбутнє)</text>
+  <rect x="260" y="210" width="160" height="50" rx="6" fill="#ede9fe" stroke="#6d28d9" stroke-dasharray="4 3"/>
+  <text x="285" y="240" font-family="Segoe UI, Arial" font-size="13">Notifications</text>
+  <rect x="480" y="210" width="140" height="50" rx="6" fill="#ede9fe" stroke="#6d28d9" stroke-dasharray="4 3"/>
+  <text x="510" y="240" font-family="Segoe UI, Arial" font-size="13">Payments</text>
+  <text x="40" y="300" font-family="Segoe UI, Arial" font-size="12" fill="#555">Суцільні блоки — зараз. Пунктир — майбутні модулі.</text>
+</svg>
